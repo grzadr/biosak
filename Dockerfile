@@ -28,7 +28,7 @@ RUN \
     snakemake=5.3.0 \
     bwa=0.7.17 \
     minimap2=2.14 \
-    picard=2.18.17 \
+    picard=2.18.20 \
     fastqc=0.11.8 \
     multiqc=1.6 \
     samtools=1.9 \
@@ -65,7 +65,7 @@ conda install --yes -f -c conda-forge \
     pandas=0.23.4 \
     openpyxl=2.5.9 \
     ftputil=3.4 \
-    cmake=3.12 \
+    cmake=3.13.1 \
     && \
 ### Clean cache
     conda clean -tipsy
