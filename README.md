@@ -4,7 +4,7 @@
 
 This repository contains Docker environment for execution of biological
 pipelines, data exploration and mining and many more. It is based on Jupyter
-repository [Dockerhub:jupyter/scipy-notebook](https://hub.docker.com/r/jupyter/scipy-notebook/)
+repository [Dockerhub:jupyter/datascience-notebook](https://hub.docker.com/r/jupyter/datascience-notebook/)
 with additional packages like bwa, samtools and more. Packages are installed with conda.
 Additionally HKL library is installed
 
@@ -47,4 +47,5 @@ Additionally HKL library is installed
 |                 | openpyxl         | 2.5.9            |
 |                 | ftputil          | 3.4              |
 |                 | cmake            | 3.13.1           |
-| **github**      | grzadr/hkl       | master           |
+| **github**      | grzadr/agizmo    | master           |
+|                 | grzadr/hkl       | master           |

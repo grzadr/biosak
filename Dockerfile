@@ -1,6 +1,6 @@
-FROM jupyter/scipy-notebook:latest
+FROM jupyter/datascience-notebook:latest
 
-LABEL version="1.0" maintainer="Adrian Grzemski <adrian.grzemski@gmail.com>"
+LABEL version="181012" maintainer="Adrian Grzemski <adrian.grzemski@gmail.com>"
 
 USER root
 ### Update system
