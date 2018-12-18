@@ -1,6 +1,6 @@
 FROM jupyter/datascience-notebook:latest
 
-LABEL version="181012" maintainer="Adrian Grzemski <adrian.grzemski@gmail.com>"
+LABEL version="181218" maintainer="Adrian Grzemski <adrian.grzemski@gmail.com>"
 
 USER root
 ### Update system
@@ -28,14 +28,14 @@ RUN \
     snakemake=5.3.0 \
     bwa=0.7.17 \
     minimap2=2.14 \
-    picard=2.18.20 \
+    picard=2.18.21 \
     fastqc=0.11.8 \
     multiqc=1.6 \
     samtools=1.9 \
     bcftools=1.9 \
     htslib=1.9 \
     bamtools=2.5.1 \
-    gatk4=4.0.11.0 \
+    gatk4=4.0.12.0 \
     && \
 ### from R
     conda install --yes -f -c r \
@@ -58,9 +58,9 @@ conda install --yes -f -c conda-forge \
     scipy=1.1 \
     statsmodels=0.9 \
     scikit-learn=0.20.1 \
-    openblas=0.3.3 \
+    openblas=0.3.4 \
     seaborn=0.9 \
-    sqlite=3.26 \
+    sqlite=3.26.0 \
     h5py=2.8.0 \
     pandas=0.23.4 \
     openpyxl=2.5.9 \
