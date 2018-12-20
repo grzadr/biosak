@@ -25,7 +25,7 @@ RUN conda update --yes -n base conda && \
 RUN \
 ### From bioconda
     conda install --yes -f -c bioconda \
-    snakemake=5.3.0 \
+    snakemake=5.4.0 \
     bwa=0.7.17 \
     minimap2=2.14 \
     picard=2.18.21 \
@@ -55,15 +55,15 @@ conda install --yes -f -c conda-forge \
     natsort=5.5.0 \
     matplotlib=3.0.2 \
     numpy=1.15.4 \
-    scipy=1.1 \
+    scipy=1.2.0 \
     statsmodels=0.9 \
     scikit-learn=0.20.1 \
     openblas=0.3.4 \
     seaborn=0.9 \
     sqlite=3.26.0 \
-    h5py=2.8.0 \
+    h5py=2.9.0 \
     pandas=0.23.4 \
-    openpyxl=2.5.9 \
+    openpyxl=2.5.12 \
     ftputil=3.4 \
     cmake=3.13.1 \
     && \

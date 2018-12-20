@@ -18,7 +18,7 @@ Additionally HKL library is installed
 ### _Packages_:
 | Repository      |      Name        | Version          |
 |:----------------|:-----------------|:-----------------|
-| **bioconda**    | snakemake        | 5.3.0            |
+| **bioconda**    | snakemake        | 5.4.0            |
 |                 | bwa              | 0.7.17           |
 |                 | minimap2         | 2.14             |
 |                 | picard           | 2.18.21          |
@@ -43,14 +43,14 @@ Additionally HKL library is installed
 |                 | matplotlib       | 3.0.2            |
 |                 | numpy            | 1.15.4           |
 |                 | statsmodels      | 0.9              |
-|                 | scipy            | 1.1.0            |
+|                 | scipy            | 1.2.0            |
 |                 | scikit-learn     | 0.20.1           |
 |                 | openblas         | 0.3.4            |
 |                 | seaborn          | 0.9              |
 |                 | sqlite           | 3.26             |
-|                 | h5py             | 2.8.0            |
+|                 | h5py             | 2.9.0            |
 |                 | pandas           | 0.23.4           |
-|                 | openpyxl         | 2.5.9            |
+|                 | openpyxl         | 2.5.12           |
 |                 | ftputil          | 3.4              |
 |                 | cmake            | 3.13.1           |
 | **github**      | grzadr/agizmo    | master           |
