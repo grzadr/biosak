@@ -1,14 +1,18 @@
 FROM jupyter/datascience-notebook:latest
 
-LABEL version="181218" maintainer="Adrian Grzemski <adrian.grzemski@gmail.com>"
+LABEL version="181220" maintainer="Adrian Grzemski <adrian.grzemski@gmail.com>"
 
 USER root
 ### Update system
 RUN apt update && apt full-upgrade -y
 
 ### Install necessery packages for library building
-RUN apt install -y build-essential software-properties-common && \
-    apt install python3-roman && \
+RUN apt install -y \
+    build-essential \
+    software-properties-common \
+    tree \
+    ncdu \
+ && apt install python3-roman && \
     cp /usr/lib/python3/dist-packages/roman.py /opt/conda/lib/python3.6 && \
     chown jovyan /opt/conda/lib/python3.6/roman.py && \
     apt autoremove -y && apt clean -y
@@ -58,7 +62,7 @@ conda install --yes -f -c conda-forge \
     scipy=1.2.0 \
     statsmodels=0.9 \
     scikit-learn=0.20.1 \
-    openblas=0.3.4 \
+    openblas=0.3.3 \
     seaborn=0.9 \
     sqlite=3.26.0 \
     h5py=2.9.0 \
