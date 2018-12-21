@@ -61,7 +61,7 @@ conda install --yes -f -c conda-forge \
     numpy=1.15.4 \
     scipy=1.2.0 \
     statsmodels=0.9 \
-    scikit-learn=0.20.1 \
+    scikit-learn=0.20.2 \
     openblas=0.3.3 \
     seaborn=0.9 \
     sqlite=3.26.0 \

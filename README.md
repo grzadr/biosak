@@ -2,7 +2,7 @@
 ### _BIOlogical Swiss Army Knife created with Docker!_
 ---
 
-### _Version_: 181220
+### _Version_: 181221
 ---
 
 ### _Description_:
@@ -44,7 +44,7 @@ Additionally HKL library is installed
 |                 | numpy            | 1.15.4           |
 |                 | statsmodels      | 0.9              |
 |                 | scipy            | 1.2.0            |
-|                 | scikit-learn     | 0.20.1           |
+|                 | scikit-learn     | 0.20.2           |
 |                 | openblas         | 0.3.3            |
 |                 | seaborn          | 0.9              |
 |                 | sqlite           | 3.26             |
