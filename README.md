@@ -2,7 +2,7 @@
 ### _BIOlogical Swiss Army Knife created with Docker!_
 ---
 
-### _Version_: 181221
+### _Version_: 181227
 ---
 
 ### _Description_:
@@ -47,11 +47,11 @@ Additionally HKL library is installed
 |                 | scikit-learn     | 0.20.2           |
 |                 | openblas         | 0.3.3            |
 |                 | seaborn          | 0.9              |
-|                 | sqlite           | 3.26             |
+|                 | sqlite           | 3.26.0           |
 |                 | h5py             | 2.9.0            |
 |                 | pandas           | 0.23.4           |
 |                 | openpyxl         | 2.5.12           |
 |                 | ftputil          | 3.4              |
-|                 | cmake            | 3.13.1           |
+|                 | cmake            | 3.13.2           |
 | **github**      | grzadr/agizmo    | master           |
 |                 | grzadr/hkl       | master           |

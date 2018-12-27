@@ -1,6 +1,6 @@
 FROM jupyter/datascience-notebook:latest
 
-LABEL version="181220" maintainer="Adrian Grzemski <adrian.grzemski@gmail.com>"
+LABEL version="181227" maintainer="Adrian Grzemski <adrian.grzemski@gmail.com>"
 
 USER root
 ### Update system
@@ -69,7 +69,7 @@ conda install --yes -f -c conda-forge \
     pandas=0.23.4 \
     openpyxl=2.5.12 \
     ftputil=3.4 \
-    cmake=3.13.1 \
+    cmake=3.13.2 \
     && \
 ### Clean cache
     conda clean -tipsy
