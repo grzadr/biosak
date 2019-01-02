@@ -1,8 +1,8 @@
 # BioSAK
-### _BIOlogical Swiss Army Knife created with Docker!_
+### _Biological Swiss Army Knife created with Docker!_
 ---
 
-### _Version_: 181227
+### _Version_: 190102
 ---
 
 ### _Description_:

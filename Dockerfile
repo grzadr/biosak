@@ -1,6 +1,6 @@
 FROM jupyter/datascience-notebook:latest
 
-LABEL version="181227" maintainer="Adrian Grzemski <adrian.grzemski@gmail.com>"
+LABEL version="190102" maintainer="Adrian Grzemski <adrian.grzemski@gmail.com>"
 
 USER root
 ### Update system
@@ -48,10 +48,11 @@ RUN \
     r-forecast=8.4 \
     r-nycflights13=1.0 \
     r-sparklyr=0.8.4 \
-    r-shiny=1.1 \
+    r-shiny=1.2.0 \
     rpy2=2.9.4 \
-    r-rmarkdown=1.10 \
+    r-rmarkdown=1.11 \
     r-tidyverse=1.2.1 \
+    r-sparklyr \
     # Python Related
     natsort=5.5.0 \
     matplotlib=3.0.2 \
@@ -72,12 +73,12 @@ RUN \
     rsa=3.4.2 \
     sympy=1.3 \
     qt=5.9.6 \
-    pyqt=5.9.6 \
+    pyqt=5.9.2 \
     numba=0.41 \
     cython=0.29.2 \
     alembic=1.0.5 \
     dropbox=9.3.0 \
-    && \
+    > test.log && \
 ### Clean cache
     conda clean -tipsy
 
