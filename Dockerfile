@@ -28,7 +28,8 @@ RUN conda update --yes -n base conda && \
 ### Install & update packages
 RUN \
 ### From bioconda
-    conda install --yes -f -c bioconda \
+    conda install --yes -f \
+    # Bioinformatics
     snakemake=5.4.0 \
     bwa=0.7.17 \
     minimap2=2.14 \
@@ -40,9 +41,7 @@ RUN \
     htslib=1.9 \
     bamtools=2.5.1 \
     gatk4=4.0.12.0 \
-    && \
-### from R
-    conda install --yes -f -c r \
+    # R Project
     r-base=3.5.1 \
     r-htmlwidgets=1.2 \
     r-rsqlite=2.1.1 \
@@ -53,9 +52,7 @@ RUN \
     rpy2=2.9.4 \
     r-rmarkdown=1.10 \
     r-tidyverse=1.2.1 \
-    && \
-### From conda-forge
-conda install --yes -f -c conda-forge \
+    # Python Related
     natsort=5.5.0 \
     matplotlib=3.0.2 \
     numpy=1.15.4 \
@@ -66,10 +63,20 @@ conda install --yes -f -c conda-forge \
     seaborn=0.9 \
     sqlite=3.26.0 \
     h5py=2.9.0 \
+    hdf5=1.10.4 \
     pandas=0.23.4 \
     openpyxl=2.5.12 \
     ftputil=3.4 \
     cmake=3.13.2 \
+    markdown=3.0.1 \
+    rsa=3.4.2 \
+    sympy=1.3 \
+    qt=5.9.6 \
+    pyqt=5.9.6 \
+    numba=0.41 \
+    cython=0.29.2 \
+    alembic=1.0.5 \
+    dropbox=9.3.0 \
     && \
 ### Clean cache
     conda clean -tipsy
