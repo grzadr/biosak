@@ -2,5 +2,3 @@
 ### _Biological Swiss Army Knife created with Docker!_
 
 ## TODO:
-
-  Update Readme automatically
