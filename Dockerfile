@@ -1,6 +1,6 @@
 FROM jupyter/datascience-notebook:latest
 
-LABEL version="190105"
+LABEL version="190106"
 LABEL maintainer="Adrian Grzemski <adrian.grzemski@gmail.com>"
 
 USER root
@@ -41,6 +41,7 @@ RUN apt-get install -y libssl1.0.0 libssl-dev
 RUN ldconfig && git clone -j8 --recurse-submodules https://github.com/grzadr/hkl.git && \
     cd hkl && mkdir build && cd build && cmake .. && make -j8 install && \
     chown jovyan:users /opt/conda/lib/python3.6/* && cd ../.. && rm -rf hkl
+RUN groupadd -g 119 qnap && usermod -aG qnap jovyan
 
 USER jovyan
 WORKDIR /home/jovyan
