@@ -30,7 +30,7 @@ RUN conda update --yes -n base conda \
 
 ADD conda_packages.txt ./conda_packages.txt
 
-RUN conda install --yes --force --file conda_packages.txt --dry-run \
+RUN conda install --yes --force --file conda_packages.txt \
 ### Clean cache
  && conda clean -tipsy
 
