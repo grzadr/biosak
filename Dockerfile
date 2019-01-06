@@ -14,6 +14,7 @@ RUN apt install -y \
     tree \
     ncdu \
     nano \
+    libssl1.0.0 libssl-dev \
  && apt install python3-roman && \
     cp /usr/lib/python3/dist-packages/roman.py /opt/conda/lib/python3.6 && \
     chown jovyan /opt/conda/lib/python3.6/roman.py && \
@@ -36,6 +37,7 @@ RUN conda install --yes --force --file conda_packages.txt \
 
 USER root
 ## Install pyHKL for jovyan
+RUN apt-get install -y libssl1.0.0 libssl-dev
 RUN ldconfig && git clone -j8 --recurse-submodules https://github.com/grzadr/hkl.git && \
     cd hkl && mkdir build && cd build && cmake .. && make -j8 install && \
     chown jovyan:users /opt/conda/lib/python3.6/* && cd ../.. && rm -rf hkl
