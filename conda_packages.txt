@@ -5,6 +5,7 @@ sqlite=3.26.0
 dropbox=9.3.0
 cmake=3.13.2
 markdown=3.0.1
+powerline-status=2.7
 
 # Bioinformati Tools
 snakemake=5.4.0
@@ -16,8 +17,9 @@ samtools=1.9
 bcftools=1.9
 htslib=1.9
 bamtools=2.5.1
-picard=2.18.22
+picard=2.18.23
 gatk4=4.0.12.0
+vcftools=0.1.16
 
 # R Project
 r-base=3.5.1
