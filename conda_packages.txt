@@ -47,7 +47,7 @@ ftputil=3.4
 
 # Python Scientific Modules
 matplotlib=3.0.2
-numpy=1.15.4
+numpy=1.16.0
 scipy=1.2.0
 statsmodels=0.9
 scikit-learn=0.20.2
