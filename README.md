@@ -1,7 +1,7 @@
 # BioSAK
 ## _Biological Swiss Army Knife created with Docker!_
 
-## _Version_: 190116
+## _Version_: 190118
 
 ## _Description_:
 
@@ -40,6 +40,7 @@ This repository contains Docker environment for execution of biological
 |picard|2.18.23
 |gatk4|4.0.12.0
 |vcftools|0.1.16
+|snpeff|4.3.1t
 
 ##### _R Project_:
 |      Name      |     Version     |

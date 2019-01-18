@@ -20,6 +20,7 @@ bamtools=2.5.1
 picard=2.18.23
 gatk4=4.0.12.0
 vcftools=0.1.16
+snpeff=4.3.1t
 
 # R Project
 r-base=3.5.1
