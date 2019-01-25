@@ -1,6 +1,6 @@
 FROM jupyter/datascience-notebook:latest
 
-LABEL version="190118"
+LABEL version="190125"
 LABEL maintainer="Adrian Grzemski <adrian.grzemski@gmail.com>"
 
 USER root
@@ -55,9 +55,13 @@ RUN add-apt-repository ppa:jonathonf/vim -y \
     vim-scripts
 
 ## Install pyHKL for jovyan
-RUN ldconfig && git clone -j8 --recurse-submodules https://github.com/grzadr/hkl.git && \
-    cd hkl && mkdir build && cd build && cmake .. && make -j8 install && \
-    chown jovyan:users /opt/conda/lib/python3.6/* && cd ../.. && rm -rf hkl
+RUN ldconfig \
+ && git clone -j8 --recurse-submodules https://github.com/grzadr/hkl.git \
+ && cd hkl && mkdir build && cd build && cmake .. && make -j8 install \
+ && chown jovyan:users /opt/conda/lib/python3.6/* && cd ../.. && rm -rf hkl \
+ && git clone -j8 --recurse-submodules https://github.com/grzadr/VCFLite \
+ && cd VCFLite && mkdir build && cd build && cmake .. && make -j8 install \
+ && cd .. && rm -rf VCFLite
 
 USER jovyan
 
