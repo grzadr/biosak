@@ -1,7 +1,7 @@
 # BioSAK
 ## _Biological Swiss Army Knife created with Docker!_
 
-## _Version_: 190125
+## _Version_: 190126
 
 ## _Description_:
 
@@ -72,6 +72,13 @@ This repository contains Docker environment for execution of biological
 |sqlalchemy|1.2.16
 |ftputil|3.4
 |beautifulsoup4|4.7.1
+|autopep8|1.4.3
+
+##### _Jupyter packages_:
+|      Name      |     Version     |
+|:---------------|:----------------|
+|jupyter_nbextensions_configurator|0.4.1
+|jupyter_contrib_nbextensions|0.5.1
 
 ##### _Python Scientific Modules_:
 |      Name      |     Version     |

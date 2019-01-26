@@ -48,6 +48,11 @@ numba=0.41
 sqlalchemy=1.2.16
 ftputil=3.4
 beautifulsoup4=4.7.1
+autopep8=1.4.3
+
+# Jupyter packages
+jupyter_nbextensions_configurator=0.4.1
+jupyter_contrib_nbextensions=0.5.1
 
 # Python Scientific Modules
 matplotlib=3.0.2
