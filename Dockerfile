@@ -1,6 +1,6 @@
 FROM jupyter/datascience-notebook:latest
 
-LABEL version="190126"
+LABEL version="190201"
 LABEL maintainer="Adrian Grzemski <adrian.grzemski@gmail.com>"
 
 USER root
@@ -21,13 +21,28 @@ RUN sudo apt install -y \
     python3-roman \
  && cp /usr/lib/python3/dist-packages/roman.py /opt/conda/lib/python3.6 \
  && chown jovyan /opt/conda/lib/python3.6/roman.py \
- && apt autoremove -y && apt clean -y \
  && add-apt-repository ppa:jonathonf/vim -y \
+ && add-apt-repository ppa:ubuntu-toolchain-r/ppa \
  && apt install -y \
     vim \
     ctags \
     vim-doc \
-    vim-scripts
+    vim-scripts \
+    gcc-8-multilib \
+    g++-8-multilib \
+ && (update-alternatives --remove-all gcc || true) \
+ && (update-alternatives --remove-all g++ || true) \
+ && update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 10 \
+ && update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 20 \
+ && update-alternatives --set gcc /usr/bin/gcc-8 \
+ && update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-8 10 \
+ && update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-7 20 \
+ && update-alternatives --set g++ /usr/bin/g++-8 \
+ && update-alternatives --install /usr/bin/cc cc /usr/bin/gcc 30 \
+ && update-alternatives --set cc /usr/bin/gcc \
+ && update-alternatives --install /usr/bin/c++ c++ /usr/bin/g++ 30 \
+ && update-alternatives --set c++ /usr/bin/g++ \
+ && apt autoremove -y && apt clean -y
 
 USER jovyan
 
@@ -80,12 +95,10 @@ RUN mkdir .vim \
  && jupyter nbextension enable toc2/main \
  && jupyter nbextension enable execute_time/ExecuteTime \
  && jupyter nbextension enable hide_header/main \
- && jupyter nbextension enable nbextensions_configurator/tree_tab/main \
  && jupyter nbextension enable printview/main \
  && jupyter nbextension enable table_beautifier/main \
  && jupyter nbextension enable contrib_nbextensions_help_item/main \
  && jupyter nbextension enable hinterland/hinterland \
- && jupyter nbextension enable nbextensions_configurator/config_menu/main \
  && jupyter nbextension enable python-markdown/main \
  && jupyter nbextension enable code_prettify/autopep8
 
