@@ -1,6 +1,6 @@
 FROM jupyter/datascience-notebook:latest
 
-LABEL version="190201"
+LABEL version="190204"
 LABEL maintainer="Adrian Grzemski <adrian.grzemski@gmail.com>"
 
 USER root
@@ -51,7 +51,8 @@ RUN conda update --yes -n base conda \
  && conda config --add channels bioconda \
  && conda config --add channels defaults \
  && conda config --add channels r \
- && conda config --add channels conda-forge
+ && conda config --add channels conda-forge \
+ > conda_update.log
 
 ADD conda_packages.txt ./conda_packages.txt
 

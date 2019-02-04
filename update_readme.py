@@ -19,7 +19,7 @@ def main():
     pipelines, data exploration and mining and many more. It is based on Jupyter
     repository [Dockerhub:jupyter/datascience-notebook](https://hub.docker.com/r/jupyter/datascience-notebook/)
     with additional packages like bwa, samtools and more. Packages are installed with conda.
-    Additionally HKL library is installed""", file=readme)
+    Additionally [HKL](https://github.com/grzadr/hkl) library is installed""", file=readme)
 
     print(file=readme)
     print("## _Packages_:", file=readme)

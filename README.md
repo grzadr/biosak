@@ -1,7 +1,7 @@
 # BioSAK
 ## _Biological Swiss Army Knife created with Docker!_
 
-## _Version_: 190201
+## _Version_: 190204
 
 ## _Description_:
 
@@ -9,7 +9,7 @@ This repository contains Docker environment for execution of biological
     pipelines, data exploration and mining and many more. It is based on Jupyter
     repository [Dockerhub:jupyter/datascience-notebook](https://hub.docker.com/r/jupyter/datascience-notebook/)
     with additional packages like bwa, samtools and more. Packages are installed with conda.
-    Additionally HKL library is installed
+    Additionally [HKL](https://github.com/grzadr/hkl) library is installed
 
 ## _Packages_:
 
@@ -39,7 +39,6 @@ This repository contains Docker environment for execution of biological
 |bcftools|1.9
 |htslib|1.9
 |bamtools|2.5.1
-|picard|2.18.23
 |gatk4|4.1.0.0
 |vcftools|0.1.16
 |snpeff|4.3.1t
@@ -92,6 +91,6 @@ This repository contains Docker environment for execution of biological
 |seaborn|0.9
 |h5py|2.9.0
 |hdf5|1.10.4
-|pandas|0.24.0
+|pandas|0.24.1
 |sympy|1.3
 |scikit-image|0.14.2
