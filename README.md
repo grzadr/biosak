@@ -60,7 +60,6 @@ This repository contains Docker environment for execution of biological
 |r-gplots|3.0.1
 |r-gsalib|2.1
 |r-devtools|2.0.1
-|r-sparklyr|0.9.4
 
 ##### _Python Modules_:
 |      Name      |     Version     |
@@ -77,7 +76,7 @@ This repository contains Docker environment for execution of biological
 |fastnumbers|2.1.1
 |bokeh|1.0.4
 |cloudpickle|0.7.0
-|prettytable|0.7.3
+|prettytable|0.7.2
 
 ##### _Jupyter packages_:
 |      Name      |     Version     |
