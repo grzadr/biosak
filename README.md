@@ -1,7 +1,7 @@
 # BioSAK
 ## _Biological Swiss Army Knife created with Docker!_
 
-## _Version_: 190204
+## _Version_: 190205
 
 ## _Description_:
 
@@ -47,9 +47,9 @@ This repository contains Docker environment for execution of biological
 |      Name      |     Version     |
 |:---------------|:----------------|
 |r-base|3.5.1
-|r-htmlwidgets|1.2
+|r-htmlwidgets|1.3
 |r-rsqlite|2.1.1
-|r-forecast|8.4
+|r-forecast|8.5
 |r-nycflights13|1.0
 |r-sparklyr|0.8.4
 |r-shiny|1.2.0
@@ -59,6 +59,8 @@ This repository contains Docker environment for execution of biological
 |r-tidyverse|1.2.1
 |r-gplots|3.0.1
 |r-gsalib|2.1
+|r-devtools|2.0.1
+|r-sparklyr|0.9.4
 
 ##### _Python Modules_:
 |      Name      |     Version     |
@@ -66,16 +68,21 @@ This repository contains Docker environment for execution of biological
 |natsort|5.5.0
 |openpyxl|2.5.14
 |pyqt|5.9.2
-|cython|0.29.3
-|numba|0.41
+|cython|0.29.4
+|numba|0.42
 |sqlalchemy|1.2.17
 |ftputil|3.4
 |beautifulsoup4|4.7.1
 |autopep8|1.4.3
+|fastnumbers|2.1.1
+|bokeh|1.0.4
+|cloudpickle|0.7.0
+|prettytable|0.7.3
 
 ##### _Jupyter packages_:
 |      Name      |     Version     |
 |:---------------|:----------------|
+|notebook|5.7.4
 |jupyter_nbextensions_configurator|0.4.1
 |jupyter_contrib_nbextensions|0.5.1
 
@@ -94,3 +101,5 @@ This repository contains Docker environment for execution of biological
 |pandas|0.24.1
 |sympy|1.3
 |scikit-image|0.14.2
+|pandoc|2.6.0
+

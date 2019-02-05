@@ -1,6 +1,6 @@
 FROM jupyter/datascience-notebook:latest
 
-LABEL version="190204"
+LABEL version="190205"
 LABEL maintainer="Adrian Grzemski <adrian.grzemski@gmail.com>"
 
 USER root
@@ -47,24 +47,23 @@ RUN sudo apt install -y \
 USER jovyan
 
 ### Update conda & add repos
-RUN conda update --yes -n base conda \
+RUN conda update --yes -n base conda > conda_update.log \
  && conda config --add channels bioconda \
  && conda config --add channels defaults \
  && conda config --add channels r \
- && conda config --add channels conda-forge \
- > conda_update.log
+ && conda config --add channels conda-forge
 
 ADD conda_packages.txt ./conda_packages.txt
 
 # Install extra packages listed in conda_packages
 RUN conda install \
   --yes \
-  --force \
   --no-channel-priority \
+  --prune \
   --file conda_packages.txt \
   > conda_install.log \
 ### Clean cache
- && conda clean -tipsy
+ && conda clean --all
 
 USER root
 
