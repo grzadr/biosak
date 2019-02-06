@@ -38,10 +38,9 @@ r-tidyverse=1.2.1
 r-gplots=3.0.1
 r-gsalib=2.1
 r-devtools=2.0.1
-r-sparklyr=0.9.4
 
 # Python Modules
-natsort=5.5.0
+natsort=6.0.0
 openpyxl=2.5.14
 pyqt=5.9.2
 cython=0.29.4
