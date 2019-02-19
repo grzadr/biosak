@@ -4,8 +4,6 @@ LABEL version="190219"
 LABEL maintainer="Adrian Grzemski <adrian.grzemski@gmail.com>"
 
 USER root
-# Add specific group
-RUN groupadd -g 119 qnap && usermod -aG qnap jovyan
 ### Update system
 RUN apt update && apt full-upgrade -y
 
@@ -101,5 +99,7 @@ RUN mkdir .vim \
  && jupyter nbextension enable hinterland/hinterland \
  && jupyter nbextension enable python-markdown/main \
  && jupyter nbextension enable code_prettify/autopep8
+
+ ADD chown=jovyan ./jupyter_notebook_config.py /home/jovyan/.jupyter/jupyter_notebook_config.py
 
 WORKDIR /home/jovyan
