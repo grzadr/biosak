@@ -100,6 +100,6 @@ RUN mkdir .vim \
  && jupyter nbextension enable python-markdown/main \
  && jupyter nbextension enable code_prettify/autopep8
 
- ADD chown=jovyan ./jupyter_notebook_config.py /home/jovyan/.jupyter/jupyter_notebook_config.py
+ ADD --chown=jovyan ./jupyter_notebook_config.py /home/jovyan/.jupyter/jupyter_notebook_config.py
 
 WORKDIR /home/jovyan
