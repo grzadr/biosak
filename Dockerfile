@@ -1,6 +1,6 @@
 FROM jupyter/datascience-notebook:latest
 
-LABEL version="190219"
+LABEL version="190220"
 LABEL maintainer="Adrian Grzemski <adrian.grzemski@gmail.com>"
 
 USER root
@@ -100,6 +100,6 @@ RUN mkdir .vim \
  && jupyter nbextension enable python-markdown/main \
  && jupyter nbextension enable code_prettify/autopep8
 
- ADD --chown=jovyan ./jupyter_notebook_config.py /home/jovyan/.jupyter/jupyter_notebook_config.py
+ADD --chown=jovyan:users ./jupyter_notebook_config.py /home/jovyan/.jupyter/jupyter_notebook_config.py
 
 WORKDIR /home/jovyan
