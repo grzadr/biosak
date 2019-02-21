@@ -1,14 +1,12 @@
 FROM jupyter/datascience-notebook:latest
 
-LABEL version="190220"
+LABEL version="190221"
 LABEL maintainer="Adrian Grzemski <adrian.grzemski@gmail.com>"
 
 USER root
 ### Update system
-RUN apt update && apt full-upgrade -y
-
-### Install necessery packages for library building
-RUN sudo apt install -y \
+RUN apt update && apt full-upgrade -y \
+ && apt install -y \
     build-essential \
     software-properties-common \
     tree \
@@ -40,7 +38,9 @@ RUN sudo apt install -y \
  && update-alternatives --set cc /usr/bin/gcc \
  && update-alternatives --install /usr/bin/c++ c++ /usr/bin/g++ 30 \
  && update-alternatives --set c++ /usr/bin/g++ \
- && apt autoremove -y && apt clean -y
+ && apt autoremove -y && apt clean -y \
+ && echo '#!/bin/bash\nconda update --all --no-channel-priority "$@"' > /usr/bin/condaup \
+ && chmod +x /usr/bin/condaup
 
 USER jovyan
 
