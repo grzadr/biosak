@@ -1,9 +1,14 @@
 FROM jupyter/datascience-notebook:latest
 
-LABEL version="190221"
+LABEL version="190225"
 LABEL maintainer="Adrian Grzemski <adrian.grzemski@gmail.com>"
 
 USER root
+
+# Add usefull aliases
+RUN echo '#!/bin/bash\nconda update --all --no-channel-priority "$@"' > /usr/bin/condaup \
+ && chmod +x /usr/bin/condaup
+
 ### Update system
 RUN apt update && apt full-upgrade -y \
  && apt install -y \
@@ -26,8 +31,12 @@ RUN apt update && apt full-upgrade -y \
     vim-scripts \
     gcc-8-multilib \
     g++-8-multilib \
+    gfortran-8-multilib \
+    g++-7-multilib \
+    gfortran-7-multilib \
  && (update-alternatives --remove-all gcc || true) \
  && (update-alternatives --remove-all g++ || true) \
+ && (update-alternatives --remove-all gfortran || true) \
  && update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 10 \
  && update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 20 \
  && update-alternatives --set gcc /usr/bin/gcc-8 \
@@ -38,9 +47,10 @@ RUN apt update && apt full-upgrade -y \
  && update-alternatives --set cc /usr/bin/gcc \
  && update-alternatives --install /usr/bin/c++ c++ /usr/bin/g++ 30 \
  && update-alternatives --set c++ /usr/bin/g++ \
- && apt autoremove -y && apt clean -y \
- && echo '#!/bin/bash\nconda update --all --no-channel-priority "$@"' > /usr/bin/condaup \
- && chmod +x /usr/bin/condaup
+ && update-alternatives --install /usr/bin/gfortran gfortran /usr/bin/gfortran-8 10 \
+ && update-alternatives --install /usr/bin/gfortran gfortran /usr/bin/gfortran-7 20 \
+ && update-alternatives --set gfortran /usr/bin/gfortran-8 \
+ && apt autoremove -y && apt clean -y
 
 USER jovyan
 
@@ -61,7 +71,8 @@ RUN conda install \
   --file conda_packages.txt \
   > conda_install.log \
 ### Clean cache
- && conda clean --all
+ && conda clean --all \
+ && conda list > conda_installed.txt
 
 USER root
 
@@ -69,8 +80,19 @@ USER root
 RUN ldconfig \
  && git clone -j8 --recurse-submodules https://github.com/grzadr/hkl.git \
  && cd hkl && mkdir build && cd build && cmake .. && make -j8 install \
- && chown jovyan:users /opt/conda/lib/python3.6/* && cd ../.. && rm -rf hkl
+ && chown jovyan:users /opt/conda/lib/python3.6/* && cd ../.. && rm -rf hkl \
+ && git clone -j8 --recurse-submodules https://github.com/grzadr/biosh.git \
+ && chown jovyan:users ./biosh && cd biosh \
+ && for FILENAME in $(ls *.sh); do \
+      FILENAME=$(basename "${FILENAME}"); \
+      echo "COPYING $FILENAME"; \
+      if [ -f "/opt/conda/bin/$FILENAME" ]; then exit 1; \
+      else cp "$FILENAME" "/opt/conda/bin/$FILENAME" ; \
+      fi; \
+    done \
+ && cd ..
 
+# TODO - install VCFLite - it requires sqlite3.so
 # && git clone -j8 --recurse-submodules https://github.com/grzadr/VCFLite \
 # && cd VCFLite && mkdir build && cd build && cmake .. && make -j8 install \
 # && cd .. && rm -rf VCFLite
