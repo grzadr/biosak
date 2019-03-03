@@ -35,7 +35,7 @@ def main():
         elif not len(line):
             print(file=readme)
         else:
-            print("|{}|{}".format(*line.rstrip().split("=")), file=readme)
+            print("|{}|{}|".format(*line.rstrip().split("=")), file=readme)
 
 if __name__ == "__main__":
     main()

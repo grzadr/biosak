@@ -1,8 +1,6 @@
 FROM jupyter/datascience-notebook:latest
 
-ARG current_date
-
-LABEL version=$current_date
+LABEL version="19-03-03"
 LABEL maintainer="Adrian Grzemski <adrian.grzemski@gmail.com>"
 
 USER root
