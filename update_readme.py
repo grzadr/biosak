@@ -10,7 +10,7 @@ def main():
     print("## _Biological Swiss Army Knife created with Docker!_", file=readme)
     # print("---", file=readme)
     print(file=readme)
-    print("## _Version_: {}".format(strftime("%y%m%d", gmtime())), file=readme)
+    print("## _Version_: {}".format(strftime("%y-%m-%d", gmtime())), file=readme)
     # print("---", file=readme)
     print(file=readme)
     print("## _Description_:", file=readme)

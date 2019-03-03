@@ -1,6 +1,6 @@
 FROM jupyter/datascience-notebook:latest
 
-LABEL version="190225"
+LABEL version=$CURRENT_DATE
 LABEL maintainer="Adrian Grzemski <adrian.grzemski@gmail.com>"
 
 USER root
@@ -13,6 +13,7 @@ RUN echo '#!/bin/bash\nconda update --all --no-channel-priority "$@"' > /usr/bin
 RUN apt update && apt full-upgrade -y \
  && apt install -y \
     build-essential \
+    man \
     software-properties-common \
     tree \
     ncdu \
@@ -20,6 +21,7 @@ RUN apt update && apt full-upgrade -y \
     libssl1.0.0 libssl-dev \
     apt-utils \
     python3-roman \
+    libsqlite3-dev \
  && cp /usr/lib/python3/dist-packages/roman.py /opt/conda/lib/python3.6 \
  && chown jovyan /opt/conda/lib/python3.6/roman.py \
  && add-apt-repository ppa:jonathonf/vim -y \
@@ -76,28 +78,27 @@ RUN conda install \
 
 USER root
 
+WORKDIR /Git/Public
+
 ## Install pyHKL for jovyan
 RUN ldconfig \
+ && chown jovyan:users -R . \
  && git clone -j8 --recurse-submodules https://github.com/grzadr/hkl.git \
- && cd hkl && mkdir build && cd build && cmake .. && make -j8 install \
- && chown jovyan:users /opt/conda/lib/python3.6/* && cd ../.. && rm -rf hkl \
+ && cd hkl && mkdir build && cd build \
+ && cmake .. && make -j8 install \
+ && chown jovyan:users /opt/conda/lib/python3.6/* && cd ../.. \
+ && chown jovyan:users -R hkl \
  && git clone -j8 --recurse-submodules https://github.com/grzadr/biosh.git \
- && chown jovyan:users ./biosh && cd biosh \
- && for FILENAME in $(ls *.sh); do \
-      FILENAME=$(basename "${FILENAME}"); \
-      echo "COPYING $FILENAME"; \
-      if [ -f "/opt/conda/bin/$FILENAME" ]; then exit 1; \
-      else cp "$FILENAME" "/opt/conda/bin/$FILENAME" ; \
-      fi; \
-    done \
- && cd ..
+ && chown jovyan:users ./biosh \
+ && git clone -j8 --recurse-submodules https://github.com/grzadr/VCFLite.git \
+ && cd VCFLite && mkdir build && cd build \
+ && cmake .. && make install -j8 && cd ../../ \
+ && chown jovyan:users -R VCFLite
 
-# TODO - install VCFLite - it requires sqlite3.so
-# && git clone -j8 --recurse-submodules https://github.com/grzadr/VCFLite \
-# && cd VCFLite && mkdir build && cd build && cmake .. && make -j8 install \
-# && cd .. && rm -rf VCFLite
+ENV PATH=${PATH}:/Git/Public/biosh
 
 USER jovyan
+WORKDIR /home/jovyan
 
 # Configure vim
 RUN mkdir .vim \
@@ -109,7 +110,6 @@ RUN mkdir .vim \
  && vim -c "PlugInstall|qa"
 
 #Configure Jupyter notebooks
-
  RUN jupyter contrib nbextension install --user \
  && jupyter nbextension enable scroll_down/main \
  && jupyter nbextension enable toc2/main \
