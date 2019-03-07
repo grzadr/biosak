@@ -22,14 +22,12 @@ def main():
     Additionally [HKL](https://github.com/grzadr/hkl) library is installed""", file=readme)
 
     print(file=readme)
-    print("## _Packages_:", file=readme)
-    print(file=readme)
-    print("#### _Conda_:", file=readme)
+    print("## _Conda Packages_:", file=readme)
     for line in open("conda_packages.txt"):
         line = line.rstrip()
 
-        if line.startswith("#"):
-            print("##### _{}_:".format(line.lstrip("# ")), file=readme)
+        if line.startswith("# "):
+            print("#### _{}_:".format(line.lstrip("# ")), file=readme)
             print("|      Name      |     Version     |", file=readme)
             print("|:---------------|:----------------|", file=readme)
         elif not len(line):

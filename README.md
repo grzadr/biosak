@@ -1,7 +1,7 @@
 # BioSAK
 ## _Biological Swiss Army Knife created with Docker!_
 
-## _Version_: 19-03-03
+## _Version_: 19-03-07
 
 ## _Description_:
 
@@ -11,10 +11,8 @@ This repository contains Docker environment for execution of biological
     with additional packages like bwa, samtools and more. Packages are installed with conda.
     Additionally [HKL](https://github.com/grzadr/hkl) library is installed
 
-## _Packages_:
-
-#### _Conda_:
-##### _General Software_:
+## _Conda Packages_:
+#### _General Software_:
 |      Name      |     Version     |
 |:---------------|:----------------|
 |libgcc-ng|8.2.0|
@@ -32,7 +30,7 @@ This repository contains Docker environment for execution of biological
 |gawk|4.2.1|
 |lz4-c|1.8.3|
 
-##### _Bioinformati Tools_:
+#### _Bioinformati Tools_:
 |      Name      |     Version     |
 |:---------------|:----------------|
 |snakemake|5.4.2|
@@ -48,7 +46,7 @@ This repository contains Docker environment for execution of biological
 |vcftools|0.1.16|
 |snpeff|4.3.1t|
 
-##### _R Project_:
+#### _R Project_:
 |      Name      |     Version     |
 |:---------------|:----------------|
 |r-base|3.5.1|
@@ -68,15 +66,15 @@ This repository contains Docker environment for execution of biological
 |r-forge|0.2.0|
 |r-r2d3|0.2.3|
 
-##### _Python Modules_:
+#### _Python Modules_:
 |      Name      |     Version     |
 |:---------------|:----------------|
 |natsort|6.0.0|
-|openpyxl|2.6.0|
+|openpyxl|2.6.1|
 |pyqt|5.9.2|
 |cython|0.29.6|
 |numba|0.42|
-|sqlalchemy|1.2.18|
+|sqlalchemy|1.3.0|
 |ftputil|3.4|
 |beautifulsoup4|4.7.1|
 |autopep8|1.4.3|
@@ -90,21 +88,16 @@ This repository contains Docker environment for execution of biological
 |protobuf|3.7.0|
 |libprotobuf|3.7.0|
 |google-api-core|1.8.0|
-##### _pygraphviz=1.5_:
-|      Name      |     Version     |
-|:---------------|:----------------|
-##### _graphviz=2.40.1_:
-|      Name      |     Version     |
-|:---------------|:----------------|
 
-##### _Jupyter packages_:
+#### _Jupyter packages_:
 |      Name      |     Version     |
 |:---------------|:----------------|
-|notebook|5.7.4|
+|notebook|5.7.5|
+|nbconvert|5.4.1|
 |jupyter_nbextensions_configurator|0.4.1|
 |jupyter_contrib_nbextensions|0.5.1|
 
-##### _Python Scientific Modules_:
+#### _Python Scientific Modules_:
 |      Name      |     Version     |
 |:---------------|:----------------|
 |matplotlib|3.0.3|
