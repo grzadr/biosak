@@ -1,7 +1,7 @@
 # BioSAK
 ## _Biological Swiss Army Knife created with Docker!_
 
-## _Version_: 19-03-10
+## _Version_: 19-03-13
 
 ## _Description_:
 
@@ -19,7 +19,7 @@ This repository contains Docker environment for execution of biological
 |libstdcxx-ng|8.2.0|
 |python|3.6.8|
 |qt|5.9.7|
-|sqlite|3.26.0|
+|sqlite|3.27.2|
 |dropbox|9.3.0|
 |cmake|3.13.4|
 |markdown|3.0.1|
@@ -33,7 +33,7 @@ This repository contains Docker environment for execution of biological
 #### _Bioinformati Tools_:
 |      Name      |     Version     |
 |:---------------|:----------------|
-|snakemake|5.4.2|
+|snakemake|5.4.3|
 |bwa|0.7.17|
 |minimap2|2.16|
 |fastqc|0.11.8|
@@ -92,7 +92,7 @@ This repository contains Docker environment for execution of biological
 #### _Jupyter packages_:
 |      Name      |     Version     |
 |:---------------|:----------------|
-|notebook|5.7.5|
+|notebook|5.7.6|
 |nbconvert|5.4.1|
 |jupyter_nbextensions_configurator|0.4.1|
 |jupyter_contrib_nbextensions|0.5.1|
@@ -109,7 +109,7 @@ This repository contains Docker environment for execution of biological
 |seaborn|0.9|
 |h5py|2.9.0|
 |hdf5|1.10.4|
-|pandas|0.24.1|
+|pandas|0.24.2|
 |sympy|1.3|
 |scikit-image|0.14.2|
 |pandoc|2.6|
