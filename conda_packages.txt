@@ -3,7 +3,7 @@ libgcc-ng=8.2.0
 libstdcxx-ng=8.2.0
 python=3.6.8
 qt=5.9.7
-sqlite=3.26.0
+sqlite=3.27.2
 dropbox=9.3.0
 cmake=3.13.4
 markdown=3.0.1
@@ -15,7 +15,7 @@ gawk=4.2.1
 lz4-c=1.8.3
 
 # Bioinformati Tools
-snakemake=5.4.2
+snakemake=5.4.3
 bwa=0.7.17
 minimap2=2.16
 fastqc=0.11.8
@@ -68,7 +68,7 @@ libprotobuf=3.7.0
 google-api-core=1.8.0
 
 # Jupyter packages
-notebook=5.7.5
+notebook=5.7.6
 nbconvert=5.4.1
 jupyter_nbextensions_configurator=0.4.1
 jupyter_contrib_nbextensions=0.5.1
