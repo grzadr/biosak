@@ -1,11 +1,12 @@
 FROM jupyter/datascience-notebook:latest
 
-LABEL version="19-03-07"
+LABEL version="19-03-10"
 LABEL maintainer="Adrian Grzemski <adrian.grzemski@gmail.com>"
 
 USER root
 
 # Add usefull aliases
+RUN echo '#!/bin/bash\nls -lha "$@"' > /usr/bin/ll && chmod +x /usr/bin/ll
 RUN echo '#!/bin/bash\nconda update --all --no-channel-priority "$@"' > /usr/bin/condaup \
  && chmod +x /usr/bin/condaup
 
@@ -22,8 +23,8 @@ RUN apt update && apt full-upgrade -y \
     apt-utils \
     python3-roman \
     libsqlite3-dev \
- && cp /usr/lib/python3/dist-packages/roman.py /opt/conda/lib/python3.6 \
- && chown jovyan /opt/conda/lib/python3.6/roman.py \
+ && cp /usr/lib/python3/dist-packages/roman.py /opt/conda/lib/python3.7 \
+ && chown jovyan /opt/conda/lib/python3.7/roman.py \
  && add-apt-repository ppa:jonathonf/vim -y \
  && add-apt-repository ppa:ubuntu-toolchain-r/ppa \
  && apt install -y \
@@ -86,7 +87,7 @@ RUN ldconfig \
  && git clone -j8 --recurse-submodules https://github.com/grzadr/hkl.git \
  && cd hkl && mkdir build && cd build \
  && cmake .. && make -j8 install \
- && chown jovyan:users /opt/conda/lib/python3.6/* && cd ../.. \
+ && chown jovyan:users /opt/conda/lib/python3.7/* && cd ../.. \
  && chown jovyan:users -R hkl \
  && git clone -j8 --recurse-submodules https://github.com/grzadr/biosh.git \
  && chown jovyan:users ./biosh \
