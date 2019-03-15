@@ -1,7 +1,7 @@
 # BioSAK
 ## _Biological Swiss Army Knife created with Docker!_
 
-## _Version_: 19-03-14
+## _Version_: 19-03-15
 
 ## _Description_:
 
@@ -84,7 +84,7 @@ This repository contains Docker environment for execution of biological
 |prettytable|0.7.2|
 |attrs|19.1.0|
 |lz4|2.1.6|
-|dask|1.1.3|
+|dask|1.1.4|
 |protobuf|3.7.0|
 |libprotobuf|3.7.0|
 |google-api-core|1.8.0|
