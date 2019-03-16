@@ -1,7 +1,7 @@
 FROM jupyter/datascience-notebook:latest
 
 ARG IMAGE_TAG
-LABEL version="${IMAGE_TAG}"
+LABEL version=19-03-16
 LABEL maintainer="Adrian Grzemski <adrian.grzemski@gmail.com>"
 
 USER root

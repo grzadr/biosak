@@ -3,7 +3,7 @@
 set -eux
 
 IMAGE_NAME="grzadr/biosak"
-DATE_TAG=$(date '+%Y-%m-%d')
+DATE_TAG=$(date '+%y-%m-%d')
 python3 update_readme.py
 docker build --pull \
   --build-arg image_label="${DATE_TAG}" \
