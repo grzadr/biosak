@@ -1,7 +1,7 @@
 FROM jupyter/datascience-notebook:latest
 
 ARG IMAGE_TAG
-LABEL version=19-03-16
+LABEL version=19-03-18
 LABEL maintainer="Adrian Grzemski <adrian.grzemski@gmail.com>"
 
 USER root
@@ -122,7 +122,12 @@ RUN mkdir .vim \
  && jupyter nbextension enable contrib_nbextensions_help_item/main \
  && jupyter nbextension enable hinterland/hinterland \
  && jupyter nbextension enable python-markdown/main \
- && jupyter nbextension enable code_prettify/autopep8
+ && jupyter nbextension enable code_prettify/autopep8 \
+ && jupyter nbextension enable snippets/main \
+ && jupyter nbextension enable varInspector/main \
+ && jupyter nbextension enable code_font_size/code_font_size \
+ && jupyter nbextension enable hide_input_all/main \
+ && jupyter nbextension enable collapsible_headings/main
 
 ADD --chown=jovyan:users ./jupyter_notebook_config.py /home/jovyan/.jupyter/jupyter_notebook_config.py
 
