@@ -10,7 +10,5 @@ docker build --pull \
   -t "${IMAGE_NAME}":latest \
   -t "${IMAGE_NAME}":"${DATE_TAG}" \
   .
-docker push "${IMAGE_NAME}":latest
-docker push "${IMAGE_NAME}":"${DATE_TAG}"
 
 docker system prune
