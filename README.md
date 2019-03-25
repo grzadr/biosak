@@ -1,7 +1,7 @@
 # BioSAK
 ## _Biological Swiss Army Knife created with Docker!_
 
-## _Version_: 19-03-21
+## _Version_: 19-03-25
 
 ## _Description_:
 
@@ -30,6 +30,7 @@ This repository contains Docker environment for execution of biological
 |gawk|4.2.1|
 |mawk|1.3.4|
 |lz4-c|1.8.3|
+|libgfortran|3.0.0|
 
 #### _Scientific Libraries_:
 |      Name      |     Version     |
