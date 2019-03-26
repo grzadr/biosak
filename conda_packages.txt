@@ -20,7 +20,7 @@ libgfortran=3.0.0
 blas = 2.4
 
 # Bioinformati Tools
-snakemake=5.4.3
+snakemake=5.4.4
 bwa=0.7.17
 minimap2=2.16
 fastqc=0.11.8
@@ -50,7 +50,8 @@ r-gsalib=2.1
 r-devtools=2.0.1
 r-forge=0.2.0
 r-r2d3=0.2.3
-r-rcpp = 1.0.1
+r-rcpp=1.0.1
+r-modelmetrics=1.2.2
 
 # Python Modules
 natsort=6.0.0
