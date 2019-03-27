@@ -52,6 +52,7 @@ r-forge=0.2.0
 r-r2d3=0.2.3
 r-rcpp=1.0.1
 r-modelmetrics=1.2.2
+r-gtable=0.3.0
 
 # Python Modules
 natsort=6.0.0
@@ -75,6 +76,7 @@ google-api-core=1.8.0
 pyyaml=5.1
 decorator=4.4.0
 llvmlite=0.28.0
+soupsieve=1.9
 
 # Jupyter packages
 notebook=5.7.6
@@ -97,5 +99,5 @@ sympy=1.3
 scikit-image=0.14.2
 pandoc=2.7.1
 ipython=7.4.0
-numba=0.43.0
+numba=0.43.1
 
