@@ -1,7 +1,7 @@
 # BioSAK
 ## _Biological Swiss Army Knife created with Docker!_
 
-## _Version_: 19-03-27
+## _Version_: 19-03-30
 
 ## _Description_:
 
@@ -49,7 +49,7 @@ This repository contains Docker environment for execution of biological
 |bcftools|1.9|
 |htslib|1.9|
 |bamtools|2.5.1|
-|gatk4|4.1.0.0|
+|gatk4|4.1.1.0|
 |vcftools|0.1.16|
 |snpeff|4.3.1t|
 
@@ -93,7 +93,6 @@ This repository contains Docker environment for execution of biological
 |prettytable|0.7.2|
 |attrs|19.1.0|
 |lz4|2.1.6|
-|dask|1.1.4|
 |protobuf|3.7.0|
 |libprotobuf|3.7.0|
 |google-api-core|1.8.0|
@@ -105,10 +104,11 @@ This repository contains Docker environment for execution of biological
 #### _Jupyter packages_:
 |      Name      |     Version     |
 |:---------------|:----------------|
-|notebook|5.7.6|
+|notebook|5.7.7|
 |nbconvert|5.4.1|
 |jupyter_nbextensions_configurator|0.4.1|
 |jupyter_contrib_nbextensions|0.5.1|
+|jupyterhub|0.9.5|
 
 #### _Python Scientific Modules_:
 |      Name      |     Version     |
@@ -128,4 +128,6 @@ This repository contains Docker environment for execution of biological
 |pandoc|2.7.1|
 |ipython|7.4.0|
 |numba|0.43.1|
+|dask|1.1.5|
+|distributed|1.26.1|
 
