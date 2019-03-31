@@ -1,7 +1,7 @@
 FROM jupyter/datascience-notebook:latest
 
 ARG IMAGE_TAG
-LABEL version=19-03-30
+LABEL version=19-03-31
 LABEL maintainer="Adrian Grzemski <adrian.grzemski@gmail.com>"
 
 USER root
@@ -76,7 +76,8 @@ RUN conda install \
   > conda_install.log \
 ### Clean cache
  && conda clean --all \
- && conda list > conda_installed.txt
+ && conda list > conda_installed.txt \
+ && pip install venn==0.1.3
 
 USER root
 
