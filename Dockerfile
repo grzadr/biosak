@@ -1,7 +1,7 @@
 FROM jupyter/datascience-notebook:latest
 
 ARG IMAGE_TAG
-LABEL version=19-04-02
+LABEL version=19-04-08
 LABEL maintainer="Adrian Grzemski <adrian.grzemski@gmail.com>"
 
 USER root
@@ -14,6 +14,7 @@ RUN echo '#!/bin/bash\nconda update --all --no-channel-priority "$@"' > /usr/bin
 ### Update system
 RUN apt update && apt full-upgrade -y \
  && apt install -y \
+    less \
     build-essential \
     man \
     software-properties-common \

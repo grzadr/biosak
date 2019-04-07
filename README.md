@@ -1,7 +1,7 @@
 # BioSAK
 ## _Biological Swiss Army Knife created with Docker!_
 
-## _Version_: 19-04-02
+## _Version_: 19-04-07
 
 ## _Description_:
 
@@ -75,6 +75,7 @@ This repository contains Docker environment for execution of biological
 |r-rcpp|1.0.1|
 |r-modelmetrics|1.2.2|
 |r-gtable|0.3.0|
+|r-ggplot2|3.1.1|
 
 #### _Python Modules_:
 |      Name      |     Version     |
@@ -83,7 +84,7 @@ This repository contains Docker environment for execution of biological
 |openpyxl|2.6.1|
 |pyqt|5.9.2|
 |cython|0.29.6|
-|sqlalchemy|1.3.1|
+|sqlalchemy|1.3.2|
 |ftputil|3.4|
 |beautifulsoup4|4.7.1|
 |autopep8|1.4.3|
@@ -100,6 +101,10 @@ This repository contains Docker environment for execution of biological
 |decorator|4.4.0|
 |llvmlite|0.28.0|
 |soupsieve|1.9|
+|setuptools|41.0.0|
+|parso|0.4.0|
+|pillow|6.0.0|
+|jinja2|2.10.1|
 
 #### _Jupyter packages_:
 |      Name      |     Version     |
@@ -124,8 +129,8 @@ This repository contains Docker environment for execution of biological
 |hdf5|1.10.4|
 |pandas|0.24.2|
 |sympy|1.3|
-|scikit-image|0.14.2|
-|pandoc|2.7.1|
+|scikit-image|0.15.0|
+|pandoc|2.7.2|
 |ipython|7.4.0|
 |numba|0.43.1|
 |dask|1.1.5|
