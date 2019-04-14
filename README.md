@@ -1,7 +1,7 @@
 # BioSAK
 ## _Biological Swiss Army Knife created with Docker!_
 
-## _Version_: 19-04-07
+## _Version_: 19-04-14
 
 ## _Description_:
 
@@ -21,7 +21,7 @@ This repository contains Docker environment for execution of biological
 |qt|5.9.7|
 |sqlite|3.27.2|
 |dropbox|9.3.0|
-|cmake|3.14.0|
+|cmake|3.14.2|
 |markdown|3.0.1|
 |powerline-status|2.7|
 |zstd|1.3.8|
@@ -40,7 +40,7 @@ This repository contains Docker environment for execution of biological
 #### _Bioinformati Tools_:
 |      Name      |     Version     |
 |:---------------|:----------------|
-|snakemake|5.4.4|
+|snakemake|5.4.5|
 |bwa|0.7.17|
 |minimap2|2.16|
 |fastqc|0.11.8|
@@ -69,13 +69,14 @@ This repository contains Docker environment for execution of biological
 |r-tidyverse|1.2.1|
 |r-gplots|3.0.1.1|
 |r-gsalib|2.1|
-|r-devtools|2.0.1|
+|r-devtools|2.0.2|
 |r-forge|0.2.0|
 |r-r2d3|0.2.3|
 |r-rcpp|1.0.1|
 |r-modelmetrics|1.2.2|
 |r-gtable|0.3.0|
 |r-ggplot2|3.1.1|
+|r-rlang|0.3.4|
 
 #### _Python Modules_:
 |      Name      |     Version     |
@@ -83,11 +84,11 @@ This repository contains Docker environment for execution of biological
 |natsort|6.0.0|
 |openpyxl|2.6.1|
 |pyqt|5.9.2|
-|cython|0.29.6|
+|cython|0.29.7|
 |sqlalchemy|1.3.2|
 |ftputil|3.4|
 |beautifulsoup4|4.7.1|
-|autopep8|1.4.3|
+|autopep8|1.4.4|
 |fastnumbers|2.1.1|
 |bokeh|1.0.4|
 |cloudpickle|0.8.1|
@@ -128,11 +129,11 @@ This repository contains Docker environment for execution of biological
 |h5py|2.9.0|
 |hdf5|1.10.4|
 |pandas|0.24.2|
-|sympy|1.3|
+|sympy|1.4|
 |scikit-image|0.15.0|
 |pandoc|2.7.2|
 |ipython|7.4.0|
 |numba|0.43.1|
-|dask|1.1.5|
-|distributed|1.26.1|
+|dask|1.2.0|
+|distributed|1.27.0|
 
