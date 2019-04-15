@@ -1,7 +1,7 @@
 # BioSAK
 ## _Biological Swiss Army Knife created with Docker!_
 
-## _Version_: 19-04-14
+## _Version_: 19-04-15
 
 ## _Description_:
 
@@ -85,23 +85,23 @@ This repository contains Docker environment for execution of biological
 |openpyxl|2.6.1|
 |pyqt|5.9.2|
 |cython|0.29.7|
-|sqlalchemy|1.3.2|
+|sqlalchemy|1.3.3|
 |ftputil|3.4|
 |beautifulsoup4|4.7.1|
 |autopep8|1.4.4|
 |fastnumbers|2.1.1|
-|bokeh|1.0.4|
+|bokeh|1.1.0|
 |cloudpickle|0.8.1|
 |prettytable|0.7.2|
 |attrs|19.1.0|
 |lz4|2.1.6|
-|protobuf|3.7.0|
-|libprotobuf|3.7.0|
+|protobuf|3.7.1|
+|libprotobuf|3.7.1|
 |google-api-core|1.8.0|
 |pyyaml|5.1|
 |decorator|4.4.0|
 |llvmlite|0.28.0|
-|soupsieve|1.9|
+|soupsieve|1.9.1|
 |setuptools|41.0.0|
 |parso|0.4.0|
 |pillow|6.0.0|

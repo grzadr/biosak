@@ -1,4 +1,4 @@
-FROM jupyter/datascience-notebook:4cdbc9cdb7d1
+FROM jupyter/datascience-notebook:7d427e7a4dde
 
 ARG IMAGE_TAG
 LABEL version=TESTING
