@@ -1,6 +1,6 @@
 FROM jupyter/datascience-notebook:7d427e7a4dde
 
-LABEL version=19-04-16
+LABEL version=19-04-18
 LABEL maintainer="Adrian Grzemski <adrian.grzemski@gmail.com>"
 
 USER root
