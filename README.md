@@ -106,7 +106,7 @@ This repository contains Docker environment for execution of biological
 |parso|0.4.0|
 |pillow|6.0.0|
 |jinja2|2.10.1|
-|urlib3|1.24.2|
+|urllib3|1.24.2|
 
 #### _Jupyter packages_:
 |      Name      |     Version     |
