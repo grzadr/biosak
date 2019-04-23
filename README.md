@@ -20,7 +20,7 @@ This repository contains Docker environment for execution of biological
 |#python|3.7.3|
 |python|3.6.8|
 |qt|5.9.7|
-|sqlite|3.27.2|
+|sqlite|3.28.0|
 |dropbox|9.3.0|
 |cmake|3.14.2|
 |markdown|3.0.1|
@@ -98,12 +98,12 @@ This repository contains Docker environment for execution of biological
 |lz4|2.1.6|
 |protobuf|3.7.1|
 |libprotobuf|3.7.1|
-|google-api-core|1.8.0|
+|google-api-core|1.8.2|
 |pyyaml|5.1|
 |decorator|4.4.0|
 |llvmlite|0.28.0|
 |soupsieve|1.9.1|
-|setuptools|41.0.0|
+|setuptools|41.0.1|
 |parso|0.4.0|
 |pillow|6.0.0|
 |jinja2|2.10.1|
@@ -122,7 +122,7 @@ This repository contains Docker environment for execution of biological
 |      Name      |     Version     |
 |:---------------|:----------------|
 |matplotlib|3.0.3|
-|numpy|1.16.2|
+|numpy|1.16.3|
 |scipy|1.2.1|
 |statsmodels|0.9|
 |scikit-learn|0.20.3|
