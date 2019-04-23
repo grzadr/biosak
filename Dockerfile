@@ -4,6 +4,7 @@ LABEL version=19-04-23
 LABEL maintainer="Adrian Grzemski <adrian.grzemski@gmail.com>"
 
 USER root
+ENV DEBIAN_FRONTEND noninteractive
 
 # Add usefull aliases
 RUN echo '#!/bin/bash\nls -lhaF "$@"' > /usr/bin/ll && chmod +x /usr/bin/ll
