@@ -84,6 +84,7 @@ parso=0.4.0
 pillow=6.0.0
 jinja2=2.10.1
 urllib3=1.24.2
+requests=2.21.0
 
 # Jupyter packages
 notebook=5.7.8

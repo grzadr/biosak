@@ -108,6 +108,7 @@ This repository contains Docker environment for execution of biological
 |pillow|6.0.0|
 |jinja2|2.10.1|
 |urllib3|1.24.2|
+|requests|2.21.0|
 
 #### _Jupyter packages_:
 |      Name      |     Version     |
