@@ -55,7 +55,7 @@ RUN apt update && apt full-upgrade -y \
  && update-alternatives --install /usr/bin/gfortran gfortran /usr/bin/gfortran-8 10 \
  && update-alternatives --install /usr/bin/gfortran gfortran /usr/bin/gfortran-7 20 \
  && update-alternatives --set gfortran /usr/bin/gfortran-8 \
- && apt autoremove -y && apt clean -y
+ && apt autoremove -y && apt clean -y && rm -rf /var/lib/apt/lists/
 
 USER jovyan
 
