@@ -68,12 +68,13 @@ RUN conda update --yes -n base conda > conda_update.log \
 ADD conda_packages.txt ./conda_packages.txt
 
 # Install extra packages listed in conda_packages
-RUN conda install \
-  --yes \
-  --no-channel-priority \
-  --prune \
-  --file conda_packages.txt \
-  > conda_install.log \
+RUN rm /opt/conda/conda-meta/pinned \
+ && conda install \
+    --yes \
+    --no-channel-priority \
+    --prune \
+    --file conda_packages.txt \
+    > conda_install.log \
 ### Clean cache
  && conda clean --all \
  && conda list \
