@@ -1,12 +1,12 @@
-FROM jupyter/datascience-notebook:7d427e7a4dde
+FROM jupyter/datascience-notebook:f646d2b2a3af
 
-LABEL version=19-04-18
+LABEL version=19-04-23
 LABEL maintainer="Adrian Grzemski <adrian.grzemski@gmail.com>"
 
 USER root
 
 # Add usefull aliases
-RUN echo '#!/bin/bash\nls -lha "$@"' > /usr/bin/ll && chmod +x /usr/bin/ll
+RUN echo '#!/bin/bash\nls -lhaF "$@"' > /usr/bin/ll && chmod +x /usr/bin/ll
 RUN echo '#!/bin/bash\nconda update --all --no-channel-priority "$@"' > /usr/bin/condaup \
  && chmod +x /usr/bin/condaup
 
@@ -76,9 +76,10 @@ RUN conda install \
   > conda_install.log \
 ### Clean cache
  && conda clean --all \
- && conda list > conda_installed.txt \
+ && conda list \
  && pip install venn==0.1.3
 
+# && conda list > conda_installed.txt \
 USER root
 
 WORKDIR /Git/Public
