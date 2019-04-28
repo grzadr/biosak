@@ -1,7 +1,7 @@
 # BioSAK
 ## _Biological Swiss Army Knife created with Docker!_
 
-## _Version_: 19-04-23
+## _Version_: 19-04-28
 
 ## _Description_:
 
@@ -22,8 +22,8 @@ This repository contains Docker environment for execution of biological
 |qt|5.9.7|
 |sqlite|3.28.0|
 |dropbox|9.3.0|
-|cmake|3.14.2|
-|markdown|3.0.1|
+|cmake|3.14.3|
+|markdown|3.1|
 |powerline-status|2.7|
 |zstd|1.3.8|
 |libtool|2.4.6|
@@ -36,7 +36,7 @@ This repository contains Docker environment for execution of biological
 #### _Scientific Libraries_:
 |      Name      |     Version     |
 |:---------------|:----------------|
-|blas | 2.5|
+|blas | 2.7|
 
 #### _Bioinformati Tools_:
 |      Name      |     Version     |
@@ -63,7 +63,7 @@ This repository contains Docker environment for execution of biological
 |r-forecast|8.6|
 |r-nycflights13|1.0|
 |r-sparklyr|1.0.0|
-|r-shiny|1.2.0|
+|r-shiny|1.3.0|
 |rpy2|2.9.4|
 |r-rmarkdown|1.12|
 |r-markdown|0.9|
@@ -98,7 +98,7 @@ This repository contains Docker environment for execution of biological
 |lz4|2.1.6|
 |protobuf|3.7.1|
 |libprotobuf|3.7.1|
-|google-api-core|1.8.2|
+|google-api-core|1.9.0|
 |pyyaml|5.1|
 |decorator|4.4.0|
 |llvmlite|0.28.0|
@@ -114,10 +114,11 @@ This repository contains Docker environment for execution of biological
 |      Name      |     Version     |
 |:---------------|:----------------|
 |notebook|5.7.8|
-|nbconvert|5.4.1|
+|nbconvert|5.5.0|
 |jupyter_nbextensions_configurator|0.4.1|
 |jupyter_contrib_nbextensions|0.5.1|
 |jupyterhub|0.9.6|
+|jupyterlab|0.35.5|
 
 #### _Python Scientific Modules_:
 |      Name      |     Version     |
@@ -135,7 +136,7 @@ This repository contains Docker environment for execution of biological
 |sympy|1.4|
 |scikit-image|0.15.0|
 |pandoc|2.7.2|
-|ipython|7.4.0|
+|ipython|7.5.0|
 |numba|0.43.1|
 |dask|1.2.0|
 |distributed|1.27.0|
