@@ -27,7 +27,7 @@ This repository contains Docker environment for execution of biological
 |powerline-status|2.7|
 |zstd|1.3.8|
 |libtool|2.4.6|
-|httplib2|0.12.1|
+|httplib2|0.12.3|
 |gawk|5.0.0|
 |mawk|1.3.4|
 |lz4-c|1.8.3|
@@ -50,7 +50,7 @@ This repository contains Docker environment for execution of biological
 |bcftools|1.9|
 |htslib|1.9|
 |bamtools|2.5.1|
-|gatk4|4.1.1.0|
+|gatk4|4.1.2.0|
 |vcftools|0.1.16|
 |snpeff|4.3.1t|
 
