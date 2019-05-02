@@ -1,7 +1,7 @@
 # BioSAK
 ## _Biological Swiss Army Knife created with Docker!_
 
-## _Version_: 19-04-28
+## _Version_: 19-05-01
 
 ## _Description_:
 
@@ -25,7 +25,7 @@ This repository contains Docker environment for execution of biological
 |cmake|3.14.3|
 |markdown|3.1|
 |powerline-status|2.7|
-|zstd|1.3.8|
+|zstd|1.4.0|
 |libtool|2.4.6|
 |httplib2|0.12.3|
 |gawk|5.0.0|
@@ -36,7 +36,7 @@ This repository contains Docker environment for execution of biological
 #### _Scientific Libraries_:
 |      Name      |     Version     |
 |:---------------|:----------------|
-|blas | 2.7|
+|blas | 2.8|
 
 #### _Bioinformati Tools_:
 |      Name      |     Version     |
@@ -60,10 +60,10 @@ This repository contains Docker environment for execution of biological
 |r-base|3.5.1|
 |r-htmlwidgets|1.3|
 |r-rsqlite|2.1.1|
-|r-forecast|8.6|
+|r-forecast|8.7|
 |r-nycflights13|1.0|
 |r-sparklyr|1.0.0|
-|r-shiny|1.3.0|
+|r-shiny|1.3.2|
 |rpy2|2.9.4|
 |r-rmarkdown|1.12|
 |r-markdown|0.9|
@@ -78,6 +78,9 @@ This repository contains Docker environment for execution of biological
 |r-gtable|0.3.0|
 |r-ggplot2|3.1.1|
 |r-rlang|0.3.4|
+|r-sys|3.2|
+|r-irkernel|1.0.0|
+|r-rcpparmadillo|0.9.400.2.0|
 
 #### _Python Modules_:
 |      Name      |     Version     |
@@ -98,7 +101,7 @@ This repository contains Docker environment for execution of biological
 |lz4|2.1.6|
 |protobuf|3.7.1|
 |libprotobuf|3.7.1|
-|google-api-core|1.9.0|
+|google-api-core|1.10.0|
 |pyyaml|5.1|
 |decorator|4.4.0|
 |llvmlite|0.28.0|
@@ -109,6 +112,7 @@ This repository contains Docker environment for execution of biological
 |jinja2|2.10.1|
 |urllib3|1.24.2|
 |requests|2.21.0|
+|fastcache|1.1.0|
 
 #### _Jupyter packages_:
 |      Name      |     Version     |
@@ -128,7 +132,7 @@ This repository contains Docker environment for execution of biological
 |scipy|1.2.1|
 |statsmodels|0.9|
 |scikit-learn|0.20.3|
-|openblas|0.3.5|
+|openblas|0.3.6|
 |seaborn|0.9|
 |h5py|2.9.0|
 |hdf5|1.10.4|
@@ -139,5 +143,5 @@ This repository contains Docker environment for execution of biological
 |ipython|7.5.0|
 |numba|0.43.1|
 |dask|1.2.0|
-|distributed|1.27.0|
+|distributed|1.27.1|
 
