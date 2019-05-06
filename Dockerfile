@@ -5,41 +5,49 @@ LABEL maintainer="Adrian Grzemski <adrian.grzemski@gmail.com>"
 
 USER root
 ENV DEBIAN_FRONTEND noninteractive
+ENV CONDA_PYTHON_VERSION=3.6
+ENV CONDA_LIB_DIR=$CONDA_DIR/lib/python$CONDA_PYTHON_VERSION
 
 # Add usefull aliases
 RUN echo '#!/bin/bash\nls -lhaF "$@"' > /usr/bin/ll && chmod +x /usr/bin/ll
 RUN echo '#!/bin/bash\nconda update --all --no-channel-priority "$@"' > /usr/bin/condaup \
  && chmod +x /usr/bin/condaup
 
+
 ### Update system
 RUN apt update && apt full-upgrade -y \
  && apt install -y \
-    less \
-    build-essential \
-    man \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    gnupg-agent \
     software-properties-common \
+    apt-utils \
+ && add-apt-repository ppa:jonathonf/vim -y \
+ && add-apt-repository ppa:ubuntu-toolchain-r/ppa -y \
+ && apt update \
+ && apt install -y \
+    man \
+    vim \
+    nano \
     tree \
     ncdu \
-    nano \
-    libssl1.0.0 libssl-dev \
-    apt-utils \
-    python3-roman \
-    libsqlite3-dev \
- && cp /usr/lib/python3/dist-packages/roman.py /opt/conda/lib/python3.7 \
- && chown jovyan /opt/conda/lib/python3.7/roman.py \
- && add-apt-repository ppa:jonathonf/vim -y \
- && add-apt-repository ppa:ubuntu-toolchain-r/ppa \
- && apt install -y \
-    vim \
     ctags \
     vim-doc \
     vim-scripts \
+    less \
+    build-essential \
     gcc-8-multilib \
     g++-8-multilib \
     gfortran-8-multilib \
     g++-7-multilib \
     gfortran-7-multilib \
- && (update-alternatives --remove-all gcc || true) \
+    libsqlite3-dev \
+    libssl1.0.0 libssl-dev \
+    python3-roman \
+ && apt autoremove -y && apt clean -y && rm -rf /var/lib/apt/lists/
+
+RUN (update-alternatives --remove-all gcc || true) \
  && (update-alternatives --remove-all g++ || true) \
  && (update-alternatives --remove-all gfortran || true) \
  && update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 10 \
@@ -55,7 +63,8 @@ RUN apt update && apt full-upgrade -y \
  && update-alternatives --install /usr/bin/gfortran gfortran /usr/bin/gfortran-8 10 \
  && update-alternatives --install /usr/bin/gfortran gfortran /usr/bin/gfortran-7 20 \
  && update-alternatives --set gfortran /usr/bin/gfortran-8 \
- && apt autoremove -y && apt clean -y && rm -rf /var/lib/apt/lists/
+ && cp /usr/lib/python3/dist-packages/roman.py $CONDA_LIB_DIR \
+ && chown jovyan $CONDA_LIB_DIR/roman.py
 
 USER jovyan
 
@@ -92,7 +101,7 @@ RUN ldconfig \
  && git clone -j8 --recurse-submodules https://github.com/grzadr/hkl.git \
  && cd hkl && mkdir build && cd build \
  && cmake .. && make -j8 install \
- && chown jovyan:users /opt/conda/lib/python3.7/* && cd ../.. \
+ && chown jovyan:users CONDA_LIB_DIR/* && cd ../.. \
  && chown jovyan:users -R hkl \
  && git clone -j8 --recurse-submodules https://github.com/grzadr/biosh.git \
  && chown jovyan:users ./biosh \
