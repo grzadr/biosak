@@ -5,8 +5,6 @@ LABEL maintainer="Adrian Grzemski <adrian.grzemski@gmail.com>"
 
 USER root
 ENV DEBIAN_FRONTEND noninteractive
-ENV CONDA_PYTHON_VERSION=3.6
-ENV CONDA_LIB_DIR=$CONDA_DIR/lib/python$CONDA_PYTHON_VERSION
 
 # Add usefull aliases
 RUN echo '#!/bin/bash\nls -lhaF "$@"' > /usr/bin/ll && chmod +x /usr/bin/ll
@@ -44,7 +42,6 @@ RUN apt update && apt full-upgrade -y \
     gfortran-7-multilib \
     libsqlite3-dev \
     libssl1.0.0 libssl-dev \
-    python3-roman \
  && apt autoremove -y && apt clean -y && rm -rf /var/lib/apt/lists/
 
 RUN (update-alternatives --remove-all gcc || true) \
@@ -62,9 +59,7 @@ RUN (update-alternatives --remove-all gcc || true) \
  && update-alternatives --set c++ /usr/bin/g++ \
  && update-alternatives --install /usr/bin/gfortran gfortran /usr/bin/gfortran-8 10 \
  && update-alternatives --install /usr/bin/gfortran gfortran /usr/bin/gfortran-7 20 \
- && update-alternatives --set gfortran /usr/bin/gfortran-8 \
- && cp /usr/lib/python3/dist-packages/roman.py $CONDA_LIB_DIR \
- && chown jovyan $CONDA_LIB_DIR/roman.py
+ && update-alternatives --set gfortran /usr/bin/gfortran-8
 
 USER jovyan
 
@@ -87,30 +82,39 @@ RUN rm /opt/conda/conda-meta/pinned \
     > conda_install.log \
 ### Clean cache
  && conda clean --all \
- && conda list \
- && pip install venn==0.1.3
+ && conda list
 
-# && conda list > conda_installed.txt \
+ENV CONDA_PYTHON_VERSION=3.6
+ENV CONDA_LIB_DIR=$CONDA_DIR/lib/python$CONDA_PYTHON_VERSION
+
+ADD pip_packages.txt ./pip_packages.txt
+RUN pip install -r pip_packages.txt > pip_install.log
+
 USER root
 
-WORKDIR /Git/Public
+ENV GIT_DIRECTORY=$HOME/Git
 
-## Install pyHKL for jovyan
-RUN ldconfig \
- && chown jovyan:users -R . \
- && git clone -j8 --recurse-submodules https://github.com/grzadr/hkl.git \
- && cd hkl && mkdir build && cd build \
+WORKDIR $GIT_DIRECTORY
+
+RUN git clone -j8 --recurse-submodules https://github.com/grzadr/biosh.git
+
+ENV PATH=${PATH}:$GIT_DIRECTORY/biosh
+
+RUN ldconfig
+
+RUN git clone -j8 --recurse-submodules https://github.com/grzadr/hkl.git \
+ && mkdir hkl/build && cd hkl/build \
+ && cmake .. && make -j8 install && \
+ cd ../ && rm -rf build
+
+WORKDIR $GIT_DIRECTORY
+
+RUN git clone -j8 --recurse-submodules https://github.com/grzadr/VCFLite.git \
+ && mkdir VCFLite/build && cd VCFLite/build \
  && cmake .. && make -j8 install \
- && chown jovyan:users CONDA_LIB_DIR/* && cd ../.. \
- && chown jovyan:users -R hkl \
- && git clone -j8 --recurse-submodules https://github.com/grzadr/biosh.git \
- && chown jovyan:users ./biosh \
- && git clone -j8 --recurse-submodules https://github.com/grzadr/VCFLite.git \
- && cd VCFLite && mkdir build && cd build \
- && cmake .. && make install -j8 && cd ../../ \
- && chown jovyan:users -R VCFLite
+ && cd ../ && rm -rf build
 
-ENV PATH=${PATH}:/Git/Public/biosh
+RUN chown jovyan:users -R $GIT_DIRECTORY
 
 USER jovyan
 WORKDIR /home/jovyan
