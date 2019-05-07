@@ -64,6 +64,8 @@ RUN (update-alternatives --remove-all gcc || true) \
 USER jovyan
 
 ### Update conda & add repos
+RUN rm /opt/conda/conda-meta/pinned
+
 RUN conda update --yes -n base conda > conda_update.log \
  && conda config --add channels bioconda \
  && conda config --add channels defaults \
@@ -73,8 +75,7 @@ RUN conda update --yes -n base conda > conda_update.log \
 ADD conda_packages.txt ./conda_packages.txt
 
 # Install extra packages listed in conda_packages
-RUN rm /opt/conda/conda-meta/pinned \
- && conda install \
+RUN conda install \
     --yes \
     --no-channel-priority \
     --prune \
