@@ -8,6 +8,7 @@ ENV DEBIAN_FRONTEND noninteractive
 
 # Add usefull aliases
 RUN echo '#!/bin/bash\nls -lhaF "$@"' > /usr/bin/ll && chmod +x /usr/bin/ll
+RUN echo '#!/bin/bash\napt autoremove -y && apt clean -y && rm -rf /var/lib/apt/lists/' > /usr/bin/apt_vacuum && chmod +x /usr/bin/apt_vacuum
 RUN echo '#!/bin/bash\nconda update --all --no-channel-priority "$@"' > /usr/bin/condaup \
  && chmod +x /usr/bin/condaup
 
@@ -25,7 +26,8 @@ RUN apt update && apt full-upgrade -y \
  && add-apt-repository ppa:jonathonf/vim -y \
  && add-apt-repository ppa:ubuntu-toolchain-r/ppa -y \
  && apt update \
- && apt install -y $(cat packages/packages_apt.list | tr '\n' ' ')
+ && apt install -y $(cat packages/packages_apt.list | tr '\n' ' ') \
+ && apt_vacuum
 #    man \
 #    vim \
 #    nano \
@@ -43,7 +45,7 @@ RUN apt update && apt full-upgrade -y \
 #    gfortran-7-multilib \
 #    libsqlite3-dev \
 #    libssl1.0.0 libssl-dev \
- && apt autoremove -y && apt clean -y && rm -rf /var/lib/apt/lists/
+# && apt autoremove -y && apt clean -y && rm -rf /var/lib/apt/lists/
 
 RUN (update-alternatives --remove-all gcc || true) \
  && (update-alternatives --remove-all g++ || true) \
@@ -87,7 +89,6 @@ RUN conda install \
 ENV CONDA_PYTHON_VERSION=3.6
 ENV CONDA_LIB_DIR=$CONDA_DIR/lib/python$CONDA_PYTHON_VERSION
 
-ADD pip_packages.txt ./pip_packages.txt
 RUN pip install -r packages/packages_pip.list > pip_install.log
 
 USER root

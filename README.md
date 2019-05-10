@@ -2,7 +2,7 @@
 # BioSAK
 ## _Biological Swiss Army Knife created with Docker!_
 
-## _Version_: 19-05-07
+## _Version_: 19-05-10
 
 ## _Description_:
 
@@ -85,10 +85,13 @@ Additionally [HKL](https://github.com/grzadr/hkl) library is installed
 |r-irkernel|1.0.1|
 |r-rcpparmadillo|0.9.400.2.0|
 |_r-mutex|1.0.0|
+|r-processx|3.3.1|
+|r-rcmdcheck|1.3.3|
 
 #### _Python Modules_:
 |      Name      |     Version     |
 |:---------------|:----------------|
+|wheel|0.33.2|
 |natsort|6.0.0|
 |openpyxl|2.6.2|
 |pyqt|5.9.2|
@@ -99,7 +102,7 @@ Additionally [HKL](https://github.com/grzadr/hkl) library is installed
 |autopep8|1.4.4|
 |fastnumbers|2.1.1|
 |bokeh|1.1.0|
-|cloudpickle|0.8.1|
+|cloudpickle|1.0.0|
 |prettytable|0.7.2|
 |attrs|19.1.0|
 |lz4|2.1.6|
@@ -117,6 +120,7 @@ Additionally [HKL](https://github.com/grzadr/hkl) library is installed
 |urllib3|1.24.2|
 |requests|2.21.0|
 |fastcache|1.1.0|
+|pygments|2.4.0|
 
 #### _Jupyter packages_:
 |      Name      |     Version     |
@@ -125,7 +129,7 @@ Additionally [HKL](https://github.com/grzadr/hkl) library is installed
 |nbconvert|5.5.0|
 |jupyter_nbextensions_configurator|0.4.1|
 |jupyter_contrib_nbextensions|0.5.1|
-|jupyterhub|0.9.6|
+|jupyterhub|1.0.0|
 |jupyterlab|0.35.6|
 
 #### _Python Scientific Modules_:
@@ -146,8 +150,8 @@ Additionally [HKL](https://github.com/grzadr/hkl) library is installed
 |pandoc|2.7.2|
 |ipython|7.5.0|
 |numba|0.43.1|
-|dask|1.2.0|
-|distributed|1.27.1|
+|dask|1.2.2|
+|distributed|1.28.0|
 
 
 ## _Pip Packages_:
