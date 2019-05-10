@@ -1,6 +1,6 @@
-FROM jupyter/datascience-notebook:2662627f26e0
+FROM jupyter/datascience-notebook:4d7dd95017ed
 
-LABEL version=19-05-07
+LABEL version=19-05-10
 LABEL maintainer="Adrian Grzemski <adrian.grzemski@gmail.com>"
 
 USER root
@@ -11,6 +11,7 @@ RUN echo '#!/bin/bash\nls -lhaF "$@"' > /usr/bin/ll && chmod +x /usr/bin/ll
 RUN echo '#!/bin/bash\nconda update --all --no-channel-priority "$@"' > /usr/bin/condaup \
  && chmod +x /usr/bin/condaup
 
+ADD --chown=jovyan:users packages ./packages
 
 ### Update system
 RUN apt update && apt full-upgrade -y \
@@ -24,24 +25,24 @@ RUN apt update && apt full-upgrade -y \
  && add-apt-repository ppa:jonathonf/vim -y \
  && add-apt-repository ppa:ubuntu-toolchain-r/ppa -y \
  && apt update \
- && apt install -y \
-    man \
-    vim \
-    nano \
-    tree \
-    ncdu \
-    ctags \
-    vim-doc \
-    vim-scripts \
-    less \
-    build-essential \
-    gcc-8-multilib \
-    g++-8-multilib \
-    gfortran-8-multilib \
-    g++-7-multilib \
-    gfortran-7-multilib \
-    libsqlite3-dev \
-    libssl1.0.0 libssl-dev \
+ && apt install -y $(cat packages/packages_apt.list | tr '\n' ' ')
+#    man \
+#    vim \
+#    nano \
+#    tree \
+#    ncdu \
+#    ctags \
+#    vim-doc \
+#    vim-scripts \
+#    less \
+#    build-essential \
+#    gcc-8-multilib \
+#    g++-8-multilib \
+#    gfortran-8-multilib \
+#    g++-7-multilib \
+#    gfortran-7-multilib \
+#    libsqlite3-dev \
+#    libssl1.0.0 libssl-dev \
  && apt autoremove -y && apt clean -y && rm -rf /var/lib/apt/lists/
 
 RUN (update-alternatives --remove-all gcc || true) \
@@ -72,14 +73,12 @@ RUN conda update --yes -n base conda > conda_update.log \
  && conda config --add channels r \
  && conda config --add channels conda-forge
 
-ADD conda_packages.txt ./conda_packages.txt
-
 # Install extra packages listed in conda_packages
 RUN conda install \
     --yes \
     --no-channel-priority \
     --prune \
-    --file conda_packages.txt \
+    --file packages/packages_conda.list \
     > conda_install.log \
 ### Clean cache
  && conda clean --all \
@@ -89,7 +88,7 @@ ENV CONDA_PYTHON_VERSION=3.6
 ENV CONDA_LIB_DIR=$CONDA_DIR/lib/python$CONDA_PYTHON_VERSION
 
 ADD pip_packages.txt ./pip_packages.txt
-RUN pip install -r pip_packages.txt > pip_install.log
+RUN pip install -r packages/packages_pip.list > pip_install.log
 
 USER root
 
