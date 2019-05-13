@@ -1,6 +1,6 @@
-FROM jupyter/datascience-notebook:4d7dd95017ed
+FROM jupyter/datascience-notebook:abdb27a6dfbb
 
-LABEL version=19-05-10
+LABEL version=19-05-13
 LABEL maintainer="Adrian Grzemski <adrian.grzemski@gmail.com>"
 
 USER root
@@ -8,7 +8,8 @@ ENV DEBIAN_FRONTEND noninteractive
 
 # Add usefull aliases
 RUN echo '#!/bin/bash\nls -lhaF "$@"' > /usr/bin/ll && chmod +x /usr/bin/ll
-RUN echo '#!/bin/bash\napt autoremove -y && apt clean -y && rm -rf /var/lib/apt/lists/' > /usr/bin/apt_vacuum && chmod +x /usr/bin/apt_vacuum
+RUN echo '#!/bin/bash\napt autoremove -y && apt clean -y && rm -rf /var/lib/apt/lists/' > /usr/bin/apt_vacuum \
+ && chmod +x /usr/bin/apt_vacuum
 RUN echo '#!/bin/bash\nconda update --all --no-channel-priority "$@"' > /usr/bin/condaup \
  && chmod +x /usr/bin/condaup
 
@@ -28,24 +29,6 @@ RUN apt update && apt full-upgrade -y \
  && apt update \
  && apt install -y $(cat packages/packages_apt.list | tr '\n' ' ') \
  && apt_vacuum
-#    man \
-#    vim \
-#    nano \
-#    tree \
-#    ncdu \
-#    ctags \
-#    vim-doc \
-#    vim-scripts \
-#    less \
-#    build-essential \
-#    gcc-8-multilib \
-#    g++-8-multilib \
-#    gfortran-8-multilib \
-#    g++-7-multilib \
-#    gfortran-7-multilib \
-#    libsqlite3-dev \
-#    libssl1.0.0 libssl-dev \
-# && apt autoremove -y && apt clean -y && rm -rf /var/lib/apt/lists/
 
 RUN (update-alternatives --remove-all gcc || true) \
  && (update-alternatives --remove-all g++ || true) \

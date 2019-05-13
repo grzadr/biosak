@@ -2,7 +2,7 @@
 # BioSAK
 ## _Biological Swiss Army Knife created with Docker!_
 
-## _Version_: 19-05-10
+## _Version_: 19-05-13
 
 ## _Description_:
 
@@ -39,7 +39,7 @@ Additionally [HKL](https://github.com/grzadr/hkl) library is installed
 #### _Scientific Libraries_:
 |      Name      |     Version     |
 |:---------------|:----------------|
-|blas | 2.8|
+|blas | 2.9|
 
 #### _Bioinformati Tools_:
 |      Name      |     Version     |
@@ -91,7 +91,7 @@ Additionally [HKL](https://github.com/grzadr/hkl) library is installed
 #### _Python Modules_:
 |      Name      |     Version     |
 |:---------------|:----------------|
-|wheel|0.33.2|
+|wheel|0.33.4|
 |natsort|6.0.0|
 |openpyxl|2.6.2|
 |pyqt|5.9.2|
