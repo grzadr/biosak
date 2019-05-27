@@ -1,7 +1,7 @@
 #FROM jupyter/datascience-notebook:abdb27a6dfbb
-FROM grzadr/workhaven:19-05-19
+FROM grzadr/workhaven:19-05-27
 
-LABEL version=19-05-19
+LABEL version=19-05-27
 LABEL maintainer="Adrian Grzemski <adrian.grzemski@gmail.com>"
 
 ENV CONDA_PYTHON_VERSION=3.6
@@ -9,13 +9,15 @@ ENV CONDA_LIB_DIR=$CONDA_DIR/lib/python$CONDA_PYTHON_VERSION
 ENV CPATH="/opt/conda/include/:${CPATH}"
 ENV LD_LIBRARY_PATH="/opt/conda/lib:${LD_LIBRARY_PATH}"
 
-WORKDIR "${HOME}"
+WORKDIR /home/jovyan
 
 ADD --chown=jovyan:users packages ./packages
 
 USER root
 RUN apt update \
  && apt install -y $(cat packages/packages_apt.list | tr '\n' ' ') \
+    >> logs/apt_install.log \
+ && chown -R jovyan:users logs \
  && apt_vacuum \
  && ldconfig
 
@@ -48,7 +50,7 @@ RUN conda install \
     --no-channel-priority \
     --prune \
     --file packages/packages_conda.list \
-    >> conda_install.log \
+    >> logs/conda_install.log \
 ### Clean cache
  && conda clean --all \
  && conda list > conda_installed.list
