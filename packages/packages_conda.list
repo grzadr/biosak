@@ -34,7 +34,6 @@ gatk4=4.1.2.0
 vcftools=0.1.16
 snpeff=4.3.1t
 delly=0.8.1
-root=6.16
 
 # R Project
 #r-base=3.5.1

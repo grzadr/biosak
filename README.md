@@ -2,7 +2,7 @@
 # BioSAK
 ## _Biological Swiss Army Knife created with Docker!_
 
-## _Version_: 19-05-19
+## _Version_: 19-05-24
 
 ## _Description_:
 
@@ -57,7 +57,6 @@ Additionally [HKL](https://github.com/grzadr/hkl) library is installed
 |vcftools|0.1.16|
 |snpeff|4.3.1t|
 |delly|0.8.1|
-|root|6.16|
 
 #### _R Project_:
 |      Name      |     Version     |
